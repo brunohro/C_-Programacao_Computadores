@@ -9,8 +9,10 @@ int main(void)
     printf("Digite o valor do raio do circulo:  ");
     scanf("%f", &raio_circulo);
 
-    float area = 3.14 * (raio_circulo*raio_circulo);
-    float comprimento = 2 * 3.14 * raio_circulo;
+    const float PI = 3.14;
+
+    float area = PI * (raio_circulo*raio_circulo);
+    float comprimento = 2 * PI * raio_circulo;
 
     printf("Valor do raio %.2f\n entao \narea = %.2f\ncomprimento = %.2f\n", raio_circulo, area, comprimento);
     return 0;
