@@ -16,7 +16,7 @@ if (peso < 5)
 {
     printf("ATENCAO! PESO NAO CORRESPONDENTE");
 } else{
-    if(idade >0 && idade <=12) // caso seja criança 
+    if(idade > 0 && idade < 12) // caso seja criança 
     { 
     if(peso >= 5 && peso <= 9){
         mg = 125;
@@ -48,7 +48,7 @@ if (peso < 5)
 
     gotas = ml * 20;
 
-    printf("\n** Dosagem em gotas: %.f **",gotas);
+    printf("\n** Dosagem recomendada: %.f gotas **",gotas);
     }
 
 return 0;

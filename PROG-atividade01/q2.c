@@ -114,30 +114,40 @@ int main(void)
         {
             if (temp_at1 < recorde_mundial)
             {
-            printf("1 - %s (**RECORDE MUNDIAL**)\n", nome1);
-            printf("1 - %s (**RECORDE MUNDIAL**)\n", nome2);            
-            printf("3 - %s\n", nome3);
+                printf("1 - %s (** RECORDE MUNDIAL **)\n", nome1);
+                printf("1 - %s (** RECORDE MUNDIAL **)\n", nome2);            
+                printf("3 - %s\n", nome3);
             }
-            else{
+            else {
                 printf("1 - %s \n", nome1);
                 printf("1 - %s \n", nome2);
                 printf("3 - %s \n", nome3);
             }
-        } else {
-                if (temp_at1 < recorde_mundial)
-                {
-                printf("1 - %s (**RECORDE MUNDIAL**)\n", nome1);
-                printf("1 - %s (**RECORDE MUNDIAL**)\n", nome2);            
-                printf("3 - %s (**RECORDE MUNDIAL**)\n", nome3);
+        } else if (temp_at2 == temp_at3 && temp_at2 != temp_at1) {
+            if (temp_at2 < recorde_mundial) {
+                printf("1 - %s (** RECORDE MUNDIAL **)\n", nome2);
+                printf("1 - %s (** RECORDE MUNDIAL **)\n", nome3);
+                printf("3 - %s\n", nome1);
+            } else {
+                printf("1 - %s\n", nome2);
+                printf("1 - %s\n", nome3);
+                printf("3 - %s\n", nome1);
             }
-            else{
+        } else {
+            if (temp_at1 < recorde_mundial)
+            {
+                printf("1 - %s (** RECORDE MUNDIAL **)\n", nome1);
+                printf("1 - %s (** RECORDE MUNDIAL **)\n", nome2);            
+                printf("1 - %s (** RECORDE MUNDIAL **)\n", nome3);
+            }
+            else {
                 printf("1 - %s \n", nome1);
                 printf("1 - %s \n", nome2);
                 printf("1 - %s \n", nome3);
             }
         }
-        
     }
-
     return 0;
 }
+
+
