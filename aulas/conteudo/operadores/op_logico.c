@@ -1,33 +1,20 @@
 #include <stdio.h>
 
-#define V 1 // Verdadeiro
-#define F 0 // Falso
+// definindo constantes 
+#define V 1 // verdadeiro
+#define F 0 // falso
+int main(void){
+    printf("*** TABELA VERDADE AND ***");
+    printf("\n ------------------");
+    printf("\n  a   b  |  a && b");
+    printf("\n ------------------");
+    printf("\n  %i   %i  |    %i", F, F, F && F);
+    printf("\n  %i   %i  |    %i", F, V, F && V);
+    printf("\n  %i   %i  |    %i", V, F, V && F);
+    printf("\n  %i   %i  |    %i", V, V, V && V);
+    printf("\n ------------------");
 
-int main(void)
-{
-     int A, B;
-
-    printf("TABELA VERDADE\n");
-    printf("---------------------------\n");
-    printf("|  A  |  B  | A AND B | A OR B |\n");
-    printf("---------------------------\n");
-
-    for (A = 0; A <= 1; A++) {
-        for (B = 0; B <= 1; B++) {
-            printf("|  %d  |  %d  |    %d    |    %d   |\n", A, B, A && B, A || B);
-        }
-    }
-    printf("---------------------------\n");
-
-    // forma manual 
-    // printf("***TABELA VERDADE***");
-    // printf("---------------------");
-    // printf("    A   B   |   a   &&  b");
-    // printf(" %i   %i  |   %i\n", F, F, F && F);
-    // printf(" %i   %i  |   %i\n", F, V, F && V);
-    // printf(" %i   %i  |   %i\n", V, F, V && F);
-    // printf(" %i   %i  |   %i\n", V, V, V && V);
-
-    // printf("\n----------------------");
+    printf("\n\n * NOT(0): %i", !0);
+    printf("\n * NOT(-5): %i", !-5);
     return 0;
 }
