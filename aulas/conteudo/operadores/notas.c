@@ -442,5 +442,3 @@ int main(void) {
 
     return 0;
 }
-notas.c
-Exibindo notas.c…
