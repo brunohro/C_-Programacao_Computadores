@@ -6,16 +6,15 @@
 #define colunas 10
 int main(int argc, char const *argv[])
 {
-    int jogadores[2];
+    srand(time(NULL));
+    int jogadores[2][2];
     int add_jogador = 0;
-    int jogador_um, jogador_dois;
+    int add_acerto = 0;
     int tentativas;
 
     for(int i = 0; i < 2; i++){
         int matriz[linhas][colunas];
         int numero = 0;
-
-        srand(time(NULL));
 
         for(int i = 0; i < linhas; i++){ // preenche minha matriz toda com 0
             for(int j = 0; j < colunas; j++){
@@ -28,7 +27,7 @@ int main(int argc, char const *argv[])
 
         int linha_aleatorio; 
         int coluna_aleatorio;
-        for(int k = 0; k < 5; k++){
+        for(int k = 0; k < 100; k++){
             linha_aleatorio = rand() % 10;
             coluna_aleatorio = rand() % 10;
             matriz[linha_aleatorio][coluna_aleatorio] = 1;
@@ -54,7 +53,7 @@ int main(int argc, char const *argv[])
         int acertos = 0;
         tentativas = 0;
 
-        while(acertos != 5 && tentativas != jogadores[0]){
+        while((add_jogador == 0 && acertos != 5) || (add_jogador ==1 && acertos < 5 && tentativas < jogadores[0][0])){
             printf("\n--> DIGITE A LINHA: ");
             scanf("%i", &linha_user);
 
@@ -79,27 +78,30 @@ int main(int argc, char const *argv[])
         }
         if(acertos == 5){
                 printf("\n --> PARABENS, VOCE CONSEGUIU ENCONTRAR OS 5 * \n");
-                printf("\n -->TOTAL DE %i TENTATIVAS \n", tentativas);
-            } else{
+                printf("\n --> TOTAL DE %i TENTATIVAS \n", tentativas);
+            }
+        else{
                 printf("\n --> PARABENS, SEU NUMERO DE ACERTOS FOI DE %i \n", acertos);
                 printf("\n -->TOTAL DE %i TENTATIVAS \n", tentativas);
-            }
+        }
 
-            if(add_jogador == 0){
-                jogadores[0] = tentativas;
-                add_jogador++;
-            } else{
-                jogadores[1] = tentativas;
-            
-            }
+        if(add_jogador == 0){
+            jogadores[0][0] = tentativas;
+            jogadores[0][1] = acertos;
+            add_acerto++;
+            add_jogador++;
+        } else {
+            jogadores[1][0] = tentativas;
+            jogadores[1][1] = acertos;
+        }
                 
 }
 
-if(jogadores[0] < jogadores[1]){ 
+if(jogadores[0][1] > jogadores[1][1]){ 
     printf("\n=============== PARABENS :) ===============\n");
     printf("\n========== JOGADOR UM VENCEU :) ===========\n");
 
-} else if(jogadores[1] < jogadores[0]){
+} else if(jogadores[1][0] < jogadores[0][0]){
     printf("\n=============== PARABENS :) ===============\n");
     printf("\n========= JOGADOR DOIS VENCEU :) ==========\n");
 } else{
