@@ -48,7 +48,7 @@ int main(int argc, char const *argv[])
                     Alunos[i].matricula = Alunos[j].matricula;
                     Alunos[j].matricula = aux_matricula;
 
-                    char aux_nome[50];
+                    etchar aux_nome[50];
                     strcpy(aux_nome, Alunos[i].nome); // passando o valor de uma para outra variável
                     strcpy(Alunos[j].nome, Alunos[i].nome);
                     strcpy(aux_nome, Alunos[j].nome);
