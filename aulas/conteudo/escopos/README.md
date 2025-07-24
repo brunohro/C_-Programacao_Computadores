@@ -1,0 +1,1 @@
+Em C, escopo de variável se refere à área do programa onde a variável pode ser acessada (visibilidade). Saber isso é essencial para evitar erros como usar uma variável não declarada ou sobrescrever valores inesperadamente.
